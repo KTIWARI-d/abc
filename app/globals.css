@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand: #99b81b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #1a1a1a;
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Utility: green section eyebrow dot */
+@layer components {
+  .heading-dot::after {
+    content: "";
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 9999px;
+    background: var(--brand);
+    margin-left: 10px;
+    vertical-align: super;
+  }
+
+  .pill-btn {
+    @apply inline-flex items-center justify-center rounded-full bg-brand px-7 py-3 text-sm font-medium text-white transition hover:bg-brand-dark;
+  }
+
+  .pill-outline {
+    @apply inline-flex items-center justify-center rounded-full border border-white/70 px-8 py-3 text-sm tracking-wide text-white transition hover:bg-white hover:text-ink;
+  }
+
+  /* Thin wavy texture used behind the quote block */
+  .wave-bg {
+    background-color: #eef0f2;
+    background-image: repeating-radial-gradient(
+      circle at 120% 50%,
+      transparent 0,
+      transparent 38px,
+      rgba(0, 0, 0, 0.04) 39px,
+      transparent 40px
+    );
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #99b81b;
+  border-radius: 9999px;
+}
